@@ -1,0 +1,221 @@
+body {
+    background: linear-gradient(99.6deg, rgb(112, 128, 152) 10.6%, rgb(242, 227, 234) 32.9%, rgb(234, 202, 213) 52.7%, rgb(220, 227, 239) 72.8%, rgb(185, 205, 227) 81.1%, rgb(154, 180, 212) 102.4%);
+    margin: 0;
+    padding: 0;
+    font: 16px/24px Arial, Tahoma, sans-serif;
+    min-height: 100vh; /* Задаем минимальную высоту равной высоте окна браузера */
+    display: flex;
+    flex-direction: column; /* Формируем вертикальный поток элементов */
+}
+
+/* Шапка сайта */
+.header {
+    margin: 0;
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18vh;
+    padding: 0 2vw;
+}
+
+.logo {
+    font-size: 1em;
+    float: left;
+}
+
+.logo h1 {
+    float: right;
+    margin-top: 35px;
+    font-size: 2em;
+    margin-left: 5px;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    font-size: 0;
+}
+
+.nav li {
+    display: inline-block;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(14px + 0.25vw);
+}
+
+.nav a {
+    display: block;
+    padding: .75em 1.5em;
+    background: radial-gradient(590px at 8.2% 13.8%, rgb(18, 35, 60) 0%, rgb(187, 187, 187) 90%);
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background: #643a79;
+}
+
+/*------------------------------------------КОНЕЦ ШАПКИ----------------------------------------------------------*/
+/* ----------------------------------------Главный блок ---------------------------------------------------------*/
+main {
+    display: flex;
+    gap: 130px;
+    margin: 40px;
+    flex-grow: 1; /* Растягиваем main на всё доступное пространство */
+}
+
+.block {
+    width: 100%; /* Блоки занимают всю ширину */
+    min-height: 120px; /* Минимальная высота блока */
+    padding: 10px 50px 10px 50px; /* Уменьшаем внутренние отступы */
+    border-radius: 70px;
+    position: sticky;
+    background: linear-gradient(to right, #bdc3c2, #5254a3);
+
+}
+
+.first-block {
+    min-width: 15vh;
+}
+
+.first-block p {
+
+}
+
+
+.custom-block { /* Новый класс для изменения размеров */
+    width: 100vh; /* Изменённая ширина */
+    min-height: 60vh; /* Изменённая высота */
+    min-width: 5vh;
+}
+
+.block h2 {
+    margin: 5px 0 20px 0;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.block p {
+    color: inherit;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;     /* Центрирование по вертикали */
+    flex-wrap: wrap;
+    gap: 20px; /* промежуток между блоками */
+    max-width: 300px; /* максимальная ширина контейнера */
+    margin: auto auto; /* центрируем контейнер по горизонтали */
+}
+
+.block1 {
+    flex-basis: calc((100% / 2) - 20px); /* ширина каждого блока с учетом промежутков */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    border-radius: 50px;
+}
+
+/*-----------------------------------------конец блока main-----------------------------*/
+/*---------------------------------------- Подвал сайта --------------------------------*/
+.footer {
+    background: linear-gradient(3deg, #e6d16c, #16014c);
+    display: flex;
+    justify-content: space-between; /* Распределяет блоки равномерно с равными промежутками */
+    width: 100%; /* Ширина контейнера, можете изменить под свои нужды */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
+    margin-top: 12vh;
+    min-height: 15vh; /* Минимальная высота футера */
+    flex-shrink: 0; /* Запрещаем сжиматься футеру */
+    text-decoration: none;
+}
+
+.cells {
+    display: flex;
+    flex-grow: 1; /* Позволяет блокам занимать доступное пространство */
+    flex-basis: 33%; /* Устанавливаем базовую ширину каждого блока в 33% */
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+.cells h3 {
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.cells a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+#skill {
+    color: #53a801;
+}
+
+/* --------------------------------------- конец блока footer --------------------------------*/
+
+/*------------------- Медиа-запросы для адаптации к разным разрешениям экрана --------------------*/
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav {
+        margin-top: 1.5rem;
+        justify-content: center;
+    }
+}
+
+/*------------------------------ кнопка в блоке header---------------------*/
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background: radial-gradient(590px at 8.2% 13.8%, rgb(18, 35, 60) 0%, rgb(187, 187, 187) 90%);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.content {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.content a {
+    text-decoration: none;
+
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.hidden {
+    display: none;
+}
+
+/*-------------------------- конец кнопки ------------------------*/
+
+/*-------------------------- работа с текстом в блоке first-block ----------*/
+#name {
+    font-weight: bold;
+}
